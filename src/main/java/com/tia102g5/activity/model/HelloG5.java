@@ -1,4 +1,4 @@
-package com.tia102g5.venue.model;
+package com.tia102g5.activity.model;
 
 public class HelloG5 {
 	
