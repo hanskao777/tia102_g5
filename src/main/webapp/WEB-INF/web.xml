@@ -4,11 +4,26 @@
    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
    http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
 
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.xhtml</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
+
+  
+  <servlet>
+    <servlet-name>ArticleServlet</servlet-name>
+    <servlet-class>com.tia102g5.article.controller.ArticleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArticleServlet</servlet-name>
+    <url-pattern>/article/article.do</url-pattern>
+  </servlet-mapping>
+  
+     <servlet>
+    <servlet-name>ArticleImgServlet</servlet-name>
+    <servlet-class>com.tia102g5.articleImg.controller.ArticleImgServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArticleImgServlet</servlet-name>
+    <url-pattern>/articleImg/articleImg.do</url-pattern>
+  </servlet-mapping>
+ 
+
 	
 </web-app>
