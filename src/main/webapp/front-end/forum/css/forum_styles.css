@@ -1,0 +1,44 @@
+/* forum_styles.css */
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* 設定主內容和表格的高度 */
+     .content {
+         height: calc(100vh - 50px); /* 減去header和footer的高度 */
+         overflow-y: auto; /* 添加滾動條 */
+     }
+     .table-container {
+         height: 100%;
+     }
+
+ul {
+    list-style-type: none; /* 隱藏小黑點 */
+    padding: 0; /* 去掉內邊距 */
+    margin: 0; /* 去掉外邊距 */
+}
+
+header, footer {
+    max-width: 1200px; /* 根據需要設置最大寬度 */
+    margin: 0 auto; /* 自動左右邊距，居中 */
+    padding: 20px; /* 根據需要設置內邊距 */
+    text-align: center; /* 文字居中 */
+}
+
+/* 按鈕文字顏色設置為黑色 */
+.nav-link {
+    color: black;
+}
+
+/* 方塊包住按鈕 */
+.button-container {
+    border: none; 
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.table {
+    color: #333333;
+}
