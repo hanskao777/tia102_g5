@@ -173,11 +173,11 @@ CREATE TABLE Activity(
 		                                       DEFAULT CURRENT_TIMESTAMP 
                                                ON UPDATE CURRENT_TIMESTAMP
 								               NOT NULL           COMMENT "建立時間",
-    activityPostTime             DATETIME      NOT NULL           COMMENT "排程時間",
+    activityPostTime             DATE          NOT NULL           COMMENT "排程時間",
     activityTag                  VARCHAR(255)  NOT NULL           COMMENT "類型標籤",
     activityStatus               INT           NOT NULL           COMMENT "活動設定狀態 0:未設定 1:已設定",
     ticketSetStatus              INT           NOT NULL           COMMENT "票券設定狀態 0:未設定 1:已設定",
-    sellTime                     DATETIME      NOT NULL           COMMENT "起售日",
+    sellTime                     DATE          NOT NULL           COMMENT "起售日",
     
     CONSTRAINT pk_Activity PRIMARY KEY (activityID)
 ) COMMENT "活動";
@@ -307,7 +307,7 @@ CREATE TABLE Heart (
 CREATE TABLE ArticleImg (
 	articleImgID                 INT            AUTO_INCREMENT     COMMENT "文章圖片ID",
 	articleID	         		 INT            NOT NULL           COMMENT "文章ID",    
-    articleImg		     		 MEDIUMBLOB                        COMMENT "圖片",
+    articlePic		     		 MEDIUMBLOB                        COMMENT "圖片",
     articleImgCreateTime  		 DATETIME 
 												DEFAULT CURRENT_TIMESTAMP 
 												ON UPDATE CURRENT_TIMESTAMP 
