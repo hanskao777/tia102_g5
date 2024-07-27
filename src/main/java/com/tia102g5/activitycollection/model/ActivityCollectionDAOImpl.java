@@ -19,6 +19,9 @@ public class ActivityCollectionDAOImpl implements ActivityCollectionDAO{
 	//更新
 	public static final String UPDATE = "UPDATE activitycollection SET memberID = ?, activityID = ? WHERE activityCollectionID = ?";
 	
+	//刪除
+	public static final String DELETE = "DELETE FROM activityCollection WHERE activityCollectionID = ?";
+	
 	//查詢 (單一)
 	public static final String FIND_BY_PRIMARY_KEY = "SELECT * FROM activitycollection WHERE activityCollectionID = ?";
 	
@@ -94,6 +97,44 @@ public class ActivityCollectionDAOImpl implements ActivityCollectionDAO{
 			pstmt.executeUpdate();
 			
 			System.out.println("更新成功");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			//關閉連線
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if(con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	public void delete(Integer activityCollectionID) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			//建立連線
+			con = DriverManager.getConnection(JDBCInfo.URL, JDBCInfo.USER, JDBCInfo.PASSWORD);
+			pstmt = con.prepareStatement(DELETE);
+			
+			//設定 SQL 指令
+			pstmt.setInt(1, activityCollectionID);
+			
+			//送出 SQL 指令
+			pstmt.executeUpdate();
+			
+			System.out.println("刪除成功");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -230,7 +271,5 @@ public class ActivityCollectionDAOImpl implements ActivityCollectionDAO{
 		}
 		return activityCollectionVOList;
 	}
-	
-	
 
 }

@@ -6,7 +6,7 @@ public interface ActivityCollectionDAO {
 	
 	void insert(ActivityCollectionVO activityCollectionVO); //新增
     void update(ActivityCollectionVO activityCollectionVO); //修改
-    //void delete(Integer activityCollectionID); //刪除
+    void delete(Integer activityCollectionID); //刪除
     ActivityCollectionVO findByPrimaryKey(Integer activityCollectionID); //查詢 (單一)
     List<ActivityCollectionVO> getAll(); //查詢 (複合)
 

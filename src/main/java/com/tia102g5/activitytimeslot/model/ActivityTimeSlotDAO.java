@@ -2,8 +2,6 @@ package com.tia102g5.activitytimeslot.model;
 
 import java.util.List;
 
-import com.tia102g5.activitycollection.model.ActivityCollectionVO;
-
 public interface ActivityTimeSlotDAO {
 	
 	void insert(ActivityTimeSlotVO activityTimeSlotVO); //新增
